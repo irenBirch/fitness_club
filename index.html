@@ -5,7 +5,13 @@
     <meta name="author" content="ІС-31 Березка Ірина">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitness club</title>
+    <link rel="stylesheet" href="style.css" />
+
     <style>
+       tr a {
+            color: rgb(216, 97, 28) !important; 
+            font-weight: bold;
+        }
       table {
         margin: 0 auto;
         padding: 20px 0;
@@ -23,62 +29,54 @@
         background-color: #471818bd;
         color: #fff;
       }
+      .gost {
+        color: rgb(102, 45, 18); 
+          font-weight: bold; 
+      }
+
     </style>
 
   </head>
-  <body style="background-image: url(background.jpeg);background-size: 100%;font-size: 18px;font-family: Life">
-    <body bgcolor = "#C6BCB2">##</body>
+  <body style="background-image: url(background.jpeg);background-size: 100%;font-family: Life">
     <header>
-      <div>
-        <a href="logo.png" target="_blank">
-          <img src="logo.png" alt="Energia Fitness Logo" style="width: 100px; height: 100px; padding-left: 40px;" />
-        </a>
-        
+      <div class="container-head">
+        <img src="logo.png" alt="Energia Fitness Logo" class="logo" />
 
-        <div>
-          <div >
+        <div class="info">
+          <div class="phone-icon">
             <img src="phone.png" alt="Phone icon" />
           </div>
-          <div>
-            <ol type="I">
-              <li><a style="color: brown;" href="tel:+380985157830">098-515-7830</a></li>
-              <li><a href="tel:+380675077397">067-507-7397</a></li>
-              <li><a href="tel:+380988765321">098-876-5321</a></li>
-          </ol>
-
+          <div class="contact-item">
+            <a href="tel:+380985157830">098-515-7830</a>
+            <br />
+            <a href="tel:+380675077397">067-507-7397</a>
+            <br />
+            <a href="tel:+380988765321">098-876-5321</a>
           </div>
         </div>
 
-        <div>
+        <div class="info">
           <img src="location.png" alt="location" />
-          <p style="font-weight: bold;">
-            <font  face="Arial" size="4" color="red">м. Київ,</font> <br />
-            <font  face="Arial" size="4" color="brown"> вул. Івана Мазепи 3 </font><br />
-            <a href="#map">Ми на карті</a>
+          <p>
+            м. Київ,<br />
+            вул. Івана Мазепи 3 <br />
+            <a href="https://maps.app.goo.gl/J9Jveiocf3okthhg9">Ми на карті</a>
           </p>
         </div>
-        <div>
+        <div class="info">
           <img src="clock.png" alt="clock" />
-          <p style="font-style: italic;">Час роботи: </p>
-            <dl>
-                <dt style="color: brown;">
-                    <p>Пн - Пт: </p>
-                </dt>
-                <dd>з 07:00 до 21:00</dd>
-
-                <dt style="color: rgb(255, 85, 85);">
-                    <p>Сб-Нд:</p>
-                </dt>
-                <dd>з 09:00 до 19:00</dd>
-            </dl>
+          <p>
+            Час роботи: <br />Пн - Пт: з 07:00 до 21:00 <br />
+            Сб-Нд: з 09:00 до 19:00
+          </p>
         </div>
       </div>
     </header>
     <nav>
       <ul>
-        <li type="square"><a href="index.html">Головна</a></li>
+        <li><a href="index.html">Головна</a></li>
         <li>|</li>
-        <li type="circle"><a href="review.html">Відгуки</a></li>
+        <li><a href="review.html">Відгуки</a></li>
         <li>|</li>
         <li><a href="directions.html">Напрямки та команда</a></li>
         <li>|</li>
@@ -87,7 +85,7 @@
         <li><a href="schedules.html">Розклад групових занять</a></li>
       </ul>
     </nav>
-    <div>
+    <div class="main-banner">
       <img src="Ellipse 1.png" alt="Ellipse" />
       <h1>energia fitness</h1>
     </div>
@@ -126,10 +124,10 @@
             <div class="review">
               <h3>Сніжана</h3>
               <p class="date">2024-03-04</p>
-              <p class="review-text">
+              <p class="review-text" style="font-size: 18px; font-family: 'Courier New', Courier, monospace !important;">
                 Недавно переїхала в Київ. довго шукала зал, який повністю мені
                 підійде. Фітнес клуб дуже комфортний. чистий та акуратний. Нові
-                пілони є явною перевагою. Працюю з тренером Вікторіїю, чудова
+                пілони є явною перевагою. Працюю з тренером <span class="gost"> Вікторією</span>, чудова
                 спеціалістка, яка вміє працювати з мотивацією та знаходить
                 індивідуальний підхід відповідно до потреб.
               </p>
@@ -137,7 +135,7 @@
             <div class="review">
               <h3>Даша</h3>
               <p class="date">2023-11-30</p>
-              <p class="review-text">
+              <p class="review-text" style="font-size: 18px; font-family: 'Courier New', Courier, monospace !important;">
                 Займаюсь з Настею і цей тренер мені максимально підходить!
                 Професійна і дуже легка в спілкуванні слідкує за моїм
                 харчуванням, хоч це і не входить в її обов'язки. В мене запит на
@@ -148,11 +146,11 @@
             <div class="review">
               <h3>Дарина</h3>
               <p class="date">2024-11-12</p>
-              <p class="review-text">
+              <p class="review-text" style="font-size: 18px; font-family: 'Courier New', Courier, monospace !important;">
                 Дуже рекомендую цей клуб. Мої показники зростають все завдяки
                 професіоналізму супер тренера Вікторії. Якісні тренажери, полотна та пілони на
                 будь- який смак, ввічливий персонал, готовий завжди допомогти,
-                все на високому рівні. 
+                все на високому рівні. Тренера дуже мотивують рухатися далі!
               </p>
             </div>
           </div>

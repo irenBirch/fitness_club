@@ -4,6 +4,125 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ІС-31 Березка Ірина</title>
+    <link rel="stylesheet" href="style.css" />
+
   </head>
-  <body></body>
+  <body>    
+    <header>
+      <div class="container-head">
+        <img src="logo.png" alt="Energia Fitness Logo" class="logo" />
+
+        <div class="info">
+          <div class="phone-icon">
+            <img src="phone.png" alt="Phone icon" />
+          </div>
+          <div class="contact-item">
+            <a href="tel:+380985157830">098-515-7830</a>
+            <br />
+            <a href="tel:+380675077397">067-507-7397</a>
+            <br />
+            <a href="tel:+380988765321">098-876-5321</a>
+          </div>
+        </div>
+
+        <div class="info">
+          <img src="location.png" alt="location" />
+          <p>
+            м. Київ,<br />
+            вул. Івана Мазепи 3 <br />
+            <a href="https://maps.app.goo.gl/J9Jveiocf3okthhg9">Ми на карті</a>
+          </p>
+        </div>
+        <div class="info">
+          <img src="clock.png" alt="clock" />
+          <p>
+            Час роботи: <br />Пн - Пт: з 07:00 до 21:00 <br />
+            Сб-Нд: з 09:00 до 19:00
+          </p>
+        </div>
+      </div>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li>|</li>
+        <li><a href="review.html">Відгуки</a></li>
+        <li>|</li>
+        <li><a href="directions.html">Напрямки та команда</a></li>
+        <li>|</li>
+        <li><a href="prices.html">Абонементи та ціни</a></li>
+        <li>|</li>
+        <li><a href="schedules.html">Розклад групових занять</a></li>
+      </ul>
+    </nav>
+    <div class="main-banner">
+      <img src="Ellipse 1.png" alt="Ellipse" />
+      <h1>energia fitness</h1>
+    </div>
+    <main>
+      <section class="reviews">
+        <h2>Відгуки наших клієнтів</h2>
+        <div class="container">
+          <div class="reviews-grid">
+            <div class="review">
+              <h3>Сніжана</h3>
+              <p id="date">2024-03-04</p>
+              <p class="review-text">
+                Недавно переїхала в Київ. довго шукала зал, який повністю мені підійде. Фітнес клуб дуже комфортний. чистий та акуратний. Нові пілони є явною перевагою. Працюю з тренером Вікторіїю, чудова спеціалістка, яка вміє працювати з мотивацією та знаходить індивідуальний підхід відповідно до потреб.
+              </p>
+            </div>
+            <div class="review">
+              <h3>Даша</h3>
+              <p id="date">2023-11-30</p>
+              <p class="review-text">
+                Займаюсь з Настею і цей тренер мені максимально підходить!
+                Професійна і дуже легка в спілкуванні слідкує за моїм
+                харчуванням, хоч це і не входить в її обов'язки. В мене запит на
+                зниження ваги і об'ємів у бедрах і ногах. Я бачу результат і це
+                мотивує займатись з цим тренером далі.
+              </p>
+            </div>
+            <div class="review">
+              <h3>Олексій</h3>
+              <p id="date">2023-11-12</p>
+              <p class="review-text">
+                Дуже рекомендую цей клуб Мої показники зростають все завдяки
+                професіоналізму супер тренера Андрія Губко. Якісні тренажери на
+                а будь- який смак, ввічливий персонал, готовий завжди допомогти,
+                все на високому рівні. А масажи допоможуть вам розслабитися
+                після напружених тренувань
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <form class="form-container">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Введіть ваше ім'я"
+        />
+
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="Введіть ваш номер телефону"
+        />
+
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Введіть ваш текст"
+        ></textarea>
+
+        <button type="submit">Надіслати</button>
+      </form>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Energia Fitness</p>
+      </div>
+    </footer></body>
 </html>
