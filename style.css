@@ -8,7 +8,15 @@ body {
 header {
   background-color: #5f3320;
   color: #fff;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+main {
+  position: relative;
+  margin-top: 210px;
 }
 h2 {
   text-align: center;
@@ -22,13 +30,14 @@ h2 {
 h1 {
   text-align: center;
   position: absolute;
-  top: 290px;
+  top: 60px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 p {
-  line-height: 1.2; 
+  line-height: 1.2;
 }
+
 .main-banner {
   background-image: url(banner.jpeg);
   background-size: 100%;
@@ -50,6 +59,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
+  position: static;
   padding: 0 15px;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
@@ -85,8 +95,9 @@ a {
 .info img {
   margin-bottom: 50px;
 }
+
 nav ul {
-  background-color: #c4b9b3;
+  background-color: #b39f94e3;
   list-style: none;
   margin: 0;
   padding: 20px 0;
@@ -96,17 +107,17 @@ nav ul {
 nav li {
   display: inline-block;
   margin-right: 20px;
+  color: #000000;
 }
 
 nav a {
   color: #000000;
   font-weight: bolder;
-
   font-size: 25px;
   text-decoration: none;
 }
 
-h3 + p{
+h3 + p {
   font-style: italic;
   color: rgb(156, 71, 32);
 }
@@ -148,6 +159,7 @@ h3 {
   text-align: center;
   font-style: italic;
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -174,7 +186,7 @@ h3 {
   border: 1px solid #ddd;
   background-color: #d9d9d9;
   border-radius: 7%;
-  margin-bottom:10px ;
+  margin-bottom: 10px;
 }
 .reviews-grid {
   display: flex;
@@ -188,6 +200,7 @@ footer {
   color: #fff;
   padding: 10px 0;
   text-align: center;
+  clear: both;
 }
 
 /* Стилі для планшетної версії (від 768px до 1024px) */
@@ -314,7 +327,7 @@ footer {
   }
 }
 /* Логічні оператори */
-@media screen and (max-width: 600px) and (orientation: portrait ) {
+@media screen and (max-width: 600px) and (orientation: portrait) {
   .review {
     background-color: rgb(184, 170, 170);
   }
@@ -346,6 +359,7 @@ button {
   width: 150px;
   transition: background-color 0.3s ease;
 }
+
 input[type="text"],
 textarea {
   width: 480px;
@@ -359,8 +373,9 @@ textarea {
   height: 120px;
 }
 .form-container {
+  float: left;
   width: 500px;
-  margin: 50px auto;
+  margin: 50px 130px;
   padding: 30px;
   background-color: #fff;
   border-radius: 15px;
@@ -438,4 +453,31 @@ th {
 }
 .title-price2 {
   padding-bottom: 30%;
+}
+
+tr a:link {
+  color: rgb(216, 97, 28);
+}
+
+tr a:visited {
+  color: #4e2c0c;
+}
+
+tr a:hover {
+  color: #af5b52;
+  text-decoration: underline;
+}
+
+tr a:active {
+  color: #ffd09a;
+}
+header div a:first-child {
+    color: #ffbc90; 
+}
+div > h3::after {
+    content: " ✨"; 
+}
+p.date::before{
+  content: "Date: ";
+  color: #942c20;
 }
