@@ -5,6 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Energia Fitness</title>
     <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .subtitle {
+        text-align: center;
+        background-color: #815d5de1;
+        width: 700px;
+        margin: 1px 30%;
+        border-radius: 25px;
+        color: white;
+        padding: 12px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 40px 60px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .column {
+        flex: 1;
+        padding: 10px;
+        width: 280px;
+      }
+      .column img {
+        width: 50%;
+        display: block;
+        margin: 20px;
+        border: 1px solid #ccc;
+        justify-self: center;
+      }
+      .description {
+        font-size: 18px;
+        line-height: 1.7;
+        text-align: center;
+        width: 25%;
+        height: 100%;
+        padding: 0 20px;
+      }
+      .trainers-header {
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        padding-top: 20px;
+      }
+      .trainers {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+        flex-wrap: wrap;
+        width: 50%;
+      }
+      .trainer {
+        background: #815d5d;
+        border-radius: 8px;
+        color: azure;
+        width: 250px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .trainer img {
+        width: 100%;
+        border-radius: 5px;
+      }
+      .trainer-name {
+        font-weight: bold;
+        margin-top: 10px;
+        padding: 8px;
+      }
+      .trainer-desc {
+        font-size: 14px;
+        margin-top: 5px;
+        line-height: 1.5;
+        text-align: left;
+        padding: 10px;
+      }
+      h3 {
+        width: 315px;
+        margin-left: 67%;
+        background-color: rgba(238, 224, 206, 0.432);
+        border-radius: 25px;
+      }
+      .divider {
+        height: 500px;
+        width: 3px;
+        background-color: #000000;
+        margin: 40px auto;
+        border-radius: 2px;
+
+        justify-self: center;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -60,11 +154,76 @@
         <img src="Ellipse 1.png" alt="Ellipse" />
         <h1>energia fitness</h1>
       </div>
+      <section>
+        <h2>Послуги та напрямки</h2>
+        <div class="subtitle">FLY YOGA</div>
+        <h3>Тренери напрямку</h3>
+        <div class="content">
+          <div class="column">
+            <img src="/img direc/fy1.jpg" alt="Fly Yoga Images" />
+            <img src="/img direc/fy2.jpg" alt="Fly Yoga Images" />
+          </div>
+          <div class="column description">
+            Відчуття польоту гарантоване! Ця унікальна методика поєднує йогу та
+            акробатику в повітрі, дозволяючи вам відчути свободу та легкість
+            руху. Ви здивуєтесь, наскільки розслабленим та енергійним можна
+            почуватись після заняття. Відкрийте нові можливості тіла в просторі,
+            занурюючись у повітряну гармонію!
+          </div>
+          <div class="divider"></div>
+          <div class="trainers">
+            <div class="trainer">
+              <img src="/img direc/dasha.jpg" alt="Дар'я" />
+              <div class="trainer-name">Дар'я</div>
+              <div class="trainer-desc">
+                Сертифікований тренер зі стажем 15 років за напрямками – fly
+                yoga, стретчинг і Pilates. У професійному спорті з дитинства,
+                багаторазова призерка українських та міжнародних змагань.
+              </div>
+            </div>
+            <div class="trainer">
+              <img src="/img direc/maryna.jpg" alt="Марина" />
+              <div class="trainer-name">Марина</div>
+              <div class="trainer-desc">
+                Сертифікований тренер з йоги та fly yoga, кандидат у майстри
+                спорту з художньої гімнастики. Зі спортом з самого дитинства.
+                Фітнес тренер з 2010 року.
+              </div>
+            </div>
+            <div class="trainer">
+              <img src="/img direc/sveta.jpg" alt="Світлана" />
+              <div class="trainer-name">Світлана</div>
+              <div class="trainer-desc">
+                Тренер-універсал: силові, функціональні, аеробні та танцювальні
+                напрямки, такі як fly yoga, Pole dance, йога. З радістю покаже
+                вам широкий та яскравий світ спорту та подарує вам любов до
+                свого нового, спортивного тіла.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="container">
         <p>&copy; 2025 Energia Fitness</p>
       </div>
     </footer>
+
+    <script>
+      alert("Ласкаво просимо на сторінку Fly Yoga!");
+
+      const showTrainers = confirm(
+        "Бажаєте побачити наших тренерів з Fly Yoga?"
+      );
+      if (!showTrainers) {
+        alert("Шкода! Все одно залишайтесь з нами 😄");
+      }
+
+      const userName = prompt("Як вас звати?");
+      if (userName) {
+        alert(`Приємно познайомитись, ${userName}!`);
+      }
+    </script>
   </body>
 </html>

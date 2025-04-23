@@ -373,9 +373,8 @@ textarea {
   height: 120px;
 }
 .form-container {
-  float: left;
   width: 500px;
-  margin: 50px 130px;
+  margin: 50px auto;
   padding: 30px;
   background-color: #fff;
   border-radius: 15px;
@@ -472,12 +471,12 @@ tr a:active {
   color: #ffd09a;
 }
 header div a:first-child {
-    color: #ffbc90; 
+  color: #ffbc90;
 }
 div > h3::after {
-    content: " ✨"; 
+  content: " ✨";
 }
-p.date::before{
+p.date::before {
   content: "Date: ";
   color: #942c20;
 }
