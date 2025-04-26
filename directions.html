@@ -22,7 +22,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 0 40px 60px;
+        padding: 0 40px 30px;
         flex-wrap: wrap;
         align-items: center;
       }
@@ -95,8 +95,25 @@
         background-color: #000000;
         margin: 40px auto;
         border-radius: 2px;
-
         justify-self: center;
+      }
+      .photo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .photo-list li {
+            overflow: hidden;
+        }
+      #joinButton{
+        margin-bottom: 10px;
+      }
+      #infoButton{
+        margin-bottom: 10px;
+      }
+      .highlight {
+        background-color: #814a30;
+        transition: background-color 0.3s;
       }
     </style>
   </head>
@@ -160,8 +177,10 @@
         <h3>Тренери напрямку</h3>
         <div class="content">
           <div class="column">
-            <img src="/img direc/fy1.jpg" alt="Fly Yoga Images" />
-            <img src="/img direc/fy2.jpg" alt="Fly Yoga Images" />
+            <ul class="photo-list" id="photoList">
+                <li><img src="/imgdirec/fy1.jpg" alt="Fly Yoga Images"></li>
+                <li><img src="/imgdirec/fy2.jpg" alt="Fly Yoga Images"></li>
+            </ul>
           </div>
           <div class="column description">
             Відчуття польоту гарантоване! Ця унікальна методика поєднує йогу та
@@ -173,7 +192,7 @@
           <div class="divider"></div>
           <div class="trainers">
             <div class="trainer">
-              <img src="/img direc/dasha.jpg" alt="Дар'я" />
+              <img src="/imgdirec/dasha.jpg" alt="Дар'я" />
               <div class="trainer-name">Дар'я</div>
               <div class="trainer-desc">
                 Сертифікований тренер зі стажем 15 років за напрямками – fly
@@ -182,7 +201,7 @@
               </div>
             </div>
             <div class="trainer">
-              <img src="/img direc/maryna.jpg" alt="Марина" />
+              <img src="/imgdirec/maryna.jpg" alt="Марина" />
               <div class="trainer-name">Марина</div>
               <div class="trainer-desc">
                 Сертифікований тренер з йоги та fly yoga, кандидат у майстри
@@ -191,7 +210,7 @@
               </div>
             </div>
             <div class="trainer">
-              <img src="/img direc/sveta.jpg" alt="Світлана" />
+              <img src="/imgdirec/sveta.jpg" alt="Світлана" />
               <div class="trainer-name">Світлана</div>
               <div class="trainer-desc">
                 Тренер-універсал: силові, функціональні, аеробні та танцювальні
@@ -202,6 +221,12 @@
             </div>
           </div>
         </div>
+        <button id="joinButton" class="button" onclick="handleClickAttribute()">Приєднатися</button>
+        <button id="infoButton" class="button">Дізнатися більше</button>
+      <div id="menu" class="menu-buttons">
+        <button data-action="showPrices">Показати ціни</button>
+        <button data-action="showSchedule">Показати розклад</button>
+      </div>
       </section>
     </main>
     <footer>
@@ -211,19 +236,95 @@
     </footer>
 
     <script>
-      alert("Ласкаво просимо на сторінку Fly Yoga!");
+      // alert("Ласкаво просимо на сторінку Fly Yoga!");
 
-      const showTrainers = confirm(
-        "Бажаєте побачити наших тренерів з Fly Yoga?"
-      );
-      if (!showTrainers) {
-        alert("Шкода! Все одно залишайтесь з нами 😄");
-      }
+      // const showTrainers = confirm(
+      //   "Бажаєте побачити наших тренерів з Fly Yoga?"
+      // );
+      // if (!showTrainers) {
+      //   alert("Шкода! Все одно залишайтесь з нами 😄");
+      // }
 
-      const userName = prompt("Як вас звати?");
-      if (userName) {
-        alert(`Приємно познайомитись, ${userName}!`);
-      }
+      // const userName = prompt("Як вас звати?");
+      // if (userName) {
+      //   alert(`Приємно познайомитись, ${userName}!`);
+      // }
+
+    // 1. лаб 7 Функція-обробник через атрибут
+    function handleClickAttribute() {
+        alert('Дякуємо за реєстрацію!');
+    }
+
+    // 2. Функція-обробник через властивість
+    const infoButton = document.getElementById('infoButton');
+    infoButton.onclick = function() {
+        alert('Ми пропонуємо тренування для всіх рівнів підготовки!');
+    };
+
+    // 3. Додавання кількох обробників через addEventListener
+    const joinButton = document.getElementById('joinButton');
+
+    joinButton.addEventListener('mouseover', function() {
+        joinButton.style.backgroundColor = 'brown';
+    });
+
+    joinButton.addEventListener('mouseout', function() {
+        joinButton.style.backgroundColor = 'beige';
+    });
+
+    // 4. Об'єкт як обробник з методом handleEvent
+    const handlerObject = {
+        handleEvent(event) {
+            alert('Клікнули на елемент: ' + event.currentTarget.tagName);
+        }
+    };
+
+    joinButton.addEventListener('click', handlerObject);
+    infoButton.addEventListener('click', handlerObject);
+
+    const photoList = document.getElementById('photoList');
+
+    photoList.onclick = function(event) {
+        let target = event.target;
+
+        if (target.tagName === 'IMG') {
+            target = target.parentElement;
+        }
+
+        if (target.tagName === 'LI') {
+            const items = photoList.querySelectorAll('li');
+            items.forEach(item => item.classList.remove('highlight'));
+            target.classList.add('highlight');
+        }
+    };   
+    
+    const menu = document.getElementById('menu');
+
+menu.onclick = function(event) {
+  const button = event.target.closest('button'); 
+  if (!button) return; 
+
+  const action = button.dataset.action; 
+  if (action) {
+    handleMenuAction(action);
+  }
+};
+
+function handleMenuAction(action) {
+  switch (action) {
+    case 'showTrainers':
+      alert('Тренери: Дар\'я, Марина, Світлана');
+      break;
+    case 'showPrices':
+      alert('Ціни: разове - 250 грн, абонемент від 900 грн за місяць! Для уточнення перейдіть на сторінку "Абонементи та ціни');
+      break;
+    case 'showSchedule':
+      alert('Розклад: Пн-Нд 08:30-20:30, для точного розкладу перейдіть на сторінку "Розклад групових заннять"');
+      break;
+    default:
+      alert('Невідома дія!');
+  }
+}
     </script>
   </body>
 </html>
