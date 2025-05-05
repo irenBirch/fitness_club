@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Energia Fitness</title>
     <link rel="stylesheet" href="style.css" />
-
     <style>
       .subtitle {
         text-align: center;
@@ -66,6 +65,7 @@
         color: azure;
         width: 250px;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
       }
       .trainer img {
         width: 100%;
@@ -236,8 +236,12 @@
     </footer>
 
     <script>
-      // alert("Ласкаво просимо на сторінку Fly Yoga!");
 
+      // alert("Ласкаво просимо на сторінку Fly Yoga!");
+      // const userName = prompt("Як вас звати?");
+      // if (userName) {
+      //   alert(`Приємно познайомитись, ${userName}!`);
+      // }
       // const showTrainers = confirm(
       //   "Бажаєте побачити наших тренерів з Fly Yoga?"
       // );
@@ -245,86 +249,159 @@
       //   alert("Шкода! Все одно залишайтесь з нами 😄");
       // }
 
-      // const userName = prompt("Як вас звати?");
-      // if (userName) {
-      //   alert(`Приємно познайомитись, ${userName}!`);
-      // }
+//     // лаб 7 Функція-обробник через атрибут
+//     function handleClickAttribute() {
+//         alert('Дякуємо за реєстрацію!');
+//     }
 
-    // 1. лаб 7 Функція-обробник через атрибут
-    function handleClickAttribute() {
-        alert('Дякуємо за реєстрацію!');
-    }
+//     // через властивість
+//     const infoButton = document.getElementById('infoButton');
+//     infoButton.onclick = function() {
+//         alert('Ми пропонуємо тренування для всіх рівнів підготовки!');
+//     };
 
-    // 2. Функція-обробник через властивість
-    const infoButton = document.getElementById('infoButton');
-    infoButton.onclick = function() {
-        alert('Ми пропонуємо тренування для всіх рівнів підготовки!');
-    };
+//     // 3. Додавання кількох обробників через addEventListener
+//     const joinButton = document.getElementById('joinButton');
 
-    // 3. Додавання кількох обробників через addEventListener
-    const joinButton = document.getElementById('joinButton');
+//     joinButton.addEventListener('mouseover', function() {
+//         joinButton.style.backgroundColor = 'brown';
+//     });
 
-    joinButton.addEventListener('mouseover', function() {
-        joinButton.style.backgroundColor = 'brown';
-    });
+//     joinButton.addEventListener('mouseout', function() {
+//         joinButton.style.backgroundColor = 'beige';
+//     });
 
-    joinButton.addEventListener('mouseout', function() {
-        joinButton.style.backgroundColor = 'beige';
-    });
+//     // 4. Об'єкт як обробник з методом handleEvent
+//     const handlerObject = {
+//         handleEvent(event) {
+//             alert('Клікнули на елемент: ' + event.currentTarget.tagName);
+//         }
+//     };
 
-    // 4. Об'єкт як обробник з методом handleEvent
-    const handlerObject = {
-        handleEvent(event) {
-            alert('Клікнули на елемент: ' + event.currentTarget.tagName);
-        }
-    };
+//     joinButton.addEventListener('click', handlerObject);
+//     infoButton.addEventListener('click', handlerObject);
 
-    joinButton.addEventListener('click', handlerObject);
-    infoButton.addEventListener('click', handlerObject);
+//     const photoList = document.getElementById('photoList');
 
-    const photoList = document.getElementById('photoList');
+//     photoList.onclick = function(event) {
+//         let target = event.target;
 
-    photoList.onclick = function(event) {
-        let target = event.target;
+//         if (target.tagName === 'IMG') {
+//             target = target.parentElement;
+//         }
 
-        if (target.tagName === 'IMG') {
-            target = target.parentElement;
-        }
-
-        if (target.tagName === 'LI') {
-            const items = photoList.querySelectorAll('li');
-            items.forEach(item => item.classList.remove('highlight'));
-            target.classList.add('highlight');
-        }
-    };   
+//         if (target.tagName === 'LI') {
+//             const items = photoList.querySelectorAll('li');
+//             items.forEach(item => item.classList.remove('highlight'));
+//             target.classList.add('highlight');
+//         }
+//     };   
     
-    const menu = document.getElementById('menu');
+//     const menu = document.getElementById('menu');
 
-menu.onclick = function(event) {
-  const button = event.target.closest('button'); 
-  if (!button) return; 
+// menu.onclick = function(event) {
+//   const button = event.target.closest('button'); 
+//   if (!button) return; 
 
-  const action = button.dataset.action; 
-  if (action) {
-    handleMenuAction(action);
+//   const action = button.dataset.action; 
+//   if (action) {
+//     handleMenuAction(action);
+//   }
+// };
+
+// function handleMenuAction(action) {
+//   switch (action) {
+//     case 'showTrainers':
+//       alert('Тренери: Дар\'я, Марина, Світлана');
+//       break;
+//     case 'showPrices':
+//       alert('Ціни: разове - 250 грн, абонемент від 900 грн за місяць! Для уточнення перейдіть на сторінку "Абонементи та ціни');
+//       break;
+//     case 'showSchedule':
+//       alert('Розклад: Пн-Нд 08:30-20:30, для точного розкладу перейдіть на сторінку "Розклад групових заннять"');
+//       break;
+//     default:
+//       alert('Невідома дія!');
+//   }
+// }
+
+//лаб8
+document.querySelectorAll(".trainer").forEach((trainer) => {
+  trainer.addEventListener("mouseover", function (event) {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      event.currentTarget.style.backgroundColor = "#b36f6f";
+      event.currentTarget.style.transform = "scale(1.1)";
+    }
+  });
+
+  trainer.addEventListener("mouseout", function (event) {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      event.currentTarget.style.backgroundColor = "#815d5d";
+      event.currentTarget.style.transform = "scale(1)";
+    }
+  });
+});
+
+const photoList = document.getElementById('photoList');
+let draggedItem = null;
+let shiftX = 0;
+let shiftY = 0;
+let originalPosition = { left: 0, top: 0 };
+
+photoList.addEventListener('mousedown', function(event) {
+  if (event.target.tagName !== 'IMG') return;
+
+  draggedItem = event.target;
+  const rect = draggedItem.getBoundingClientRect();
+
+  shiftX = event.clientX - rect.left;
+  shiftY = event.clientY - rect.top;
+
+  originalPosition = {
+    left: rect.left + window.scrollX,
+    top: rect.top + window.scrollY,
+  };
+  draggedItem.style.width = rect.width + 'px';
+  draggedItem.style.height = rect.height + 'px';
+
+  draggedItem.classList.add('dragging');
+  draggedItem.style.position = 'absolute';
+  draggedItem.style.left = originalPosition.left + 'px';
+  draggedItem.style.top = originalPosition.top + 'px';
+  draggedItem.style.zIndex = 1000;
+  draggedItem.style.pointerEvents = 'none';
+
+  document.body.appendChild(draggedItem);
+
+  function moveAt(pageX, pageY) {
+    draggedItem.style.left = pageX - shiftX + 'px';
+    draggedItem.style.top = pageY - shiftY + 'px';
   }
-};
 
-function handleMenuAction(action) {
-  switch (action) {
-    case 'showTrainers':
-      alert('Тренери: Дар\'я, Марина, Світлана');
-      break;
-    case 'showPrices':
-      alert('Ціни: разове - 250 грн, абонемент від 900 грн за місяць! Для уточнення перейдіть на сторінку "Абонементи та ціни');
-      break;
-    case 'showSchedule':
-      alert('Розклад: Пн-Нд 08:30-20:30, для точного розкладу перейдіть на сторінку "Розклад групових заннять"');
-      break;
-    default:
-      alert('Невідома дія!');
+  function onMouseMove(e) {
+    moveAt(e.pageX, e.pageY);
   }
-}
+
+  document.addEventListener('mousemove', onMouseMove);
+
+  document.addEventListener('mouseup', function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    draggedItem.style.cursor = 'grab';
+
+    const firstLi = photoList.querySelector('li');
+    firstLi.insertBefore(draggedItem, firstLi.firstChild);
+
+    draggedItem.classList.remove('dragging');
+    draggedItem.style.position = '';
+    draggedItem.style.left = '';
+    draggedItem.style.top = '';
+    draggedItem.style.zIndex = '';
+    draggedItem.style.pointerEvents = '';
+
+    draggedItem = null;
+  }, { once: true });
+});
+photoList.ondragstart = () => false;
     </script>
   </body>
 </html>
