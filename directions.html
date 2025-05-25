@@ -260,7 +260,7 @@
 //         alert('Ми пропонуємо тренування для всіх рівнів підготовки!');
 //     };
 
-//     // 3. Додавання кількох обробників через addEventListener
+//     //  Додавання кількох обробників через addEventListener
 //     const joinButton = document.getElementById('joinButton');
 
 //     joinButton.addEventListener('mouseover', function() {
@@ -271,7 +271,7 @@
 //         joinButton.style.backgroundColor = 'beige';
 //     });
 
-//     // 4. Об'єкт як обробник з методом handleEvent
+//     //  Об'єкт як обробник з методом handleEvent
 //     const handlerObject = {
 //         handleEvent(event) {
 //             alert('Клікнули на елемент: ' + event.currentTarget.tagName);
@@ -280,6 +280,7 @@
 
 //     joinButton.addEventListener('click', handlerObject);
 //     infoButton.addEventListener('click', handlerObject);
+
 
 //     const photoList = document.getElementById('photoList');
 
@@ -361,9 +362,9 @@ photoList.addEventListener('mousedown', function(event) {
     left: rect.left + window.scrollX,
     top: rect.top + window.scrollY,
   };
+
   draggedItem.style.width = rect.width + 'px';
   draggedItem.style.height = rect.height + 'px';
-
   draggedItem.classList.add('dragging');
   draggedItem.style.position = 'absolute';
   draggedItem.style.left = originalPosition.left + 'px';
@@ -388,20 +389,28 @@ photoList.addEventListener('mousedown', function(event) {
     document.removeEventListener('mousemove', onMouseMove);
     draggedItem.style.cursor = 'grab';
 
-    const firstLi = photoList.querySelector('li');
-    firstLi.insertBefore(draggedItem, firstLi.firstChild);
+    setTimeout(() => {
+      const firstLi = photoList.querySelector('li');
+      if (firstLi) {
+        firstLi.insertBefore(draggedItem, firstLi.firstChild);
+      }
 
-    draggedItem.classList.remove('dragging');
-    draggedItem.style.position = '';
-    draggedItem.style.left = '';
-    draggedItem.style.top = '';
-    draggedItem.style.zIndex = '';
-    draggedItem.style.pointerEvents = '';
+      draggedItem.classList.remove('dragging');
+      draggedItem.style.position = '';
+      draggedItem.style.left = '';
+      draggedItem.style.top = '';
+      draggedItem.style.zIndex = '';
+      draggedItem.style.pointerEvents = '';
+      draggedItem.style.width = '';
+      draggedItem.style.height = '';
 
-    draggedItem = null;
+      draggedItem = null;
+    }, 3000);
   }, { once: true });
 });
+
 photoList.ondragstart = () => false;
+
     </script>
   </body>
 </html>
